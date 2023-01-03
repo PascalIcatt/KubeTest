@@ -103,7 +103,7 @@ jobs:
         container-registry-url: ${{ env.REGISTRYNAME }}.azurecr.io
         container-registry-username: ${{ steps.getACRCred.outputs.acr_username }}
         container-registry-password: ${{ steps.getACRCred.outputs.acr_password }}
-        secret-name: ${{ env.CLUSTERNAME }}dockerauth
+        secret-name: kubetestdockerauth
 
     - name: Fetch Application insights key
       id: GetAppInsightsKey
