@@ -64,7 +64,7 @@ jobs:
         docker push ${{ env.REGISTRYNAME }}.azurecr.io/${{ env.IMAGENAME }}:${{ github.sha }}
  
   deploy-staging:
-    name: Deploy application to Staging AKS using ${{ secrets.MYKUBESECRET }}
+    name: Deploy application to Staging AKS
     environment:
       name: Staging
     needs: build
@@ -151,7 +151,7 @@ jobs:
     needs: [deploy-staging]
     runs-on: ubuntu-latest
     steps:
-    - run: echo Deploy to Production using ${{ secrets.MYKUBESECRET }}
+    - run: echo Deploy to Production
     - uses: actions/checkout@v2
 
     # login to azure
